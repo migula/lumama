@@ -1,0 +1,211 @@
+// 引入初始化样式
+@import "base.less";
+// // 不同屏幕设置
+// html{
+//   font-size: 1rem;
+// }
+@media(width:1024){
+  html{
+      font-size: 2.74rem !important;
+  }
+}
+
+@media(width:750){
+  html{
+      font-size: 2rem !important;
+  }
+}
+
+@media(width:640){
+  html{
+      font-size: 1.7rem !important;
+  }
+}
+@media(width:411){
+  html{
+    font-size: 1.0959999999999999rem !important;
+  }
+}
+@media(width:375){
+  html{
+    font-size: 1rem !important;
+  }
+}
+@media(width:360){
+  html{
+    font-size: 0.95rem !important;
+  }
+}
+@media(width:320){
+  html{
+      font-size: 1rem !important;
+  }
+}
+
+#header {
+  background-color: #ccc;
+  display: flex;
+  text-align: center;
+
+  span {
+    margin: 0 auto;
+    padding: 0.05rem;
+    font-size: 0.18rem;
+    line-height: 0.18rem;
+  }
+  .address {
+    padding: 0.05rem;
+    a {
+      font-size: 0.14rem;
+      color: red;
+    }
+  }
+  .my {
+    a {
+      img {
+        width: 0.25rem;
+        height: 0.25rem;
+        padding: 0.05rem;
+      }
+    }
+  }
+}
+//轮播图
+#slide {
+  .swiper-container {
+    .swiper-wrapper {
+      div {
+        img {
+          width: 100vw;
+        }
+      }
+    }
+  }
+}
+// 导航
+#nav {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;  
+  padding:  0.05rem 0;
+  div {
+  
+    width: 33.3vw;
+    padding: 0.02rem;
+    a {
+      
+      img {
+       width: 100%;
+      }
+    }
+  }
+}
+
+// 主体
+#main {
+  // travel部分
+  .travel {
+    border-top: 0.01rem solid #ccc;    
+    border-bottom: 0.01rem solid #ccc;    
+    width: 100vw;
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        width: 25vw;
+        a {
+          display: block;
+          border-top: 0.01rem solid #ccc;
+          border-right: 0.01rem solid #ccc;
+          img {
+           width: 100%;
+          }
+        }
+      }
+    }
+    
+   
+  }
+
+  // 主题部分
+  .title {
+    width: 100vw;
+    display: flex;
+    
+    .asideLeft {
+      width: 50vw;      
+      a{
+        
+        img {
+         width: 100%;
+        }
+      }
+      
+    }
+    .asideRight {
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+    
+      a{
+
+        img {
+         width: 100%;
+        }
+      }
+    }
+  }
+  //热门活动 
+  .hotactive{
+    h3{
+      background-color: #ccc;
+      font-size: 0.18rem;
+      padding-top: 0.2rem;
+      padding-left: 0.1rem;
+    }
+    width: 100vw;
+    a{
+      display: block;
+      img{
+        width: 100%;
+      }
+    }
+  } 
+  .longtravel{
+    .traveltitle{
+      display: flex;
+      a{
+        padding: 0.1rem 0;
+        &.active{
+          border-bottom: 0.02rem solid red;
+        }
+        width: 50%;
+        display: block;
+        text-align: center;
+        font-size: 0.18rem;
+        line-height: 0.18rem;
+      }
+    }
+    width: 100vw;
+    a{
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+
+#footer {
+  background-color: hotpink;
+  position: relative;
+  padding: 0.1rem;
+
+  a {
+    margin-left: 0.05rem;
+  }
+
+  .top {
+    right: 0px;
+    position: absolute;
+  }
+}

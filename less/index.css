@@ -1,0 +1,446 @@
+/* 1. 放样式初始化 */
+* {
+  margin: 0px;
+  padding: 0px;
+  /* 移动端都会设置盒模型为border-box */
+  box-sizing: border-box;
+  /* 去掉内边框 */
+  outline: 0;
+  /* 去除a标签的按住高亮背景色 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+input,
+select {
+  /* 消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式 */
+  /* 另外，select加上这个属性后，select的高度就可以改变了 */
+  -webkit-appearance: none;
+}
+/* 去掉小圆点 */
+li {
+  list-style: none;
+}
+img {
+  /* 去除图片3px间隙 */
+  vertical-align: middle;
+}
+a {
+  background: transparent;
+  text-decoration: none;
+  /* 设置a标签的高亮背景色 手指按住的时候会出现 */
+  -webkit-tap-highlight-color: transparent;
+  color: #666;
+}
+/* 样式初始化 */
+html {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  /* 默认网页字体都使用了14px */
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333333;
+  background-color: white;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+a:active {
+  outline: 0;
+}
+a:active {
+  color: #006699;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+  border: 0;
+  outline: 0;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+form,
+blockquote {
+  margin: 0;
+}
+ul,
+ol,
+li,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none outside none;
+}
+h1,
+h2,
+h3 {
+  line-height: 2;
+  font-weight: normal;
+}
+h1 {
+  font-size: 18px;
+}
+h2 {
+  font-size: 16px;
+}
+h3 {
+  font-size: 14px;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #cccccc;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #cccccc;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #cccccc;
+}
+/* 2. 放所有页面都会用到公共类 */
+/* 边框的公共类名 */
+.bt {
+  border-top: 1px solid #ccc;
+}
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+.bl {
+  border-left: 1px solid #ccc;
+}
+.br {
+  border-right: 1px solid #ccc;
+}
+@media (width: 1024) {
+  html {
+    font-size: 2.74rem !important;
+  }
+}
+@media (width: 750) {
+  html {
+    font-size: 2rem !important;
+  }
+}
+@media (width: 640) {
+  html {
+    font-size: 1.7rem !important;
+  }
+}
+@media (width: 411) {
+  html {
+    font-size: 1.0959999999999999rem !important;
+  }
+}
+@media (width: 375) {
+  html {
+    font-size: 1rem !important;
+  }
+}
+@media (width: 360) {
+  html {
+    font-size: 0.95rem !important;
+  }
+}
+@media (width: 320) {
+  html {
+    font-size: 1rem !important;
+  }
+}
+#header {
+  background-color: #ccc;
+  display: flex;
+  text-align: center;
+}
+#header span {
+  margin: 0 auto;
+  padding: 0.05rem;
+  font-size: 0.18rem;
+  line-height: 0.18rem;
+}
+#header .address {
+  padding: 0.05rem;
+}
+#header .address a {
+  font-size: 0.14rem;
+  color: red;
+}
+#header .my a img {
+  width: 0.25rem;
+  height: 0.25rem;
+  padding: 0.05rem;
+}
+#slide .swiper-container .swiper-wrapper div img {
+  width: 100vw;
+}
+#nav {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.05rem 0;
+}
+#nav div {
+  width: 33.3vw;
+  padding: 0.02rem;
+}
+#nav div a img {
+  width: 100%;
+}
+#main .travel {
+  border-top: 0.01rem solid #ccc;
+  border-bottom: 0.01rem solid #ccc;
+  width: 100vw;
+}
+#main .travel ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#main .travel ul li {
+  width: 25vw;
+}
+#main .travel ul li a {
+  display: block;
+  border-top: 0.01rem solid #ccc;
+  border-right: 0.01rem solid #ccc;
+}
+#main .travel ul li a img {
+  width: 100%;
+}
+#main .title {
+  width: 100vw;
+  display: flex;
+}
+#main .title .asideLeft {
+  width: 50vw;
+}
+#main .title .asideLeft a img {
+  width: 100%;
+}
+#main .title .asideRight {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+#main .title .asideRight a img {
+  width: 100%;
+}
+#main .hotactive {
+  width: 100vw;
+}
+#main .hotactive h3 {
+  background-color: #ccc;
+  font-size: 0.18rem;
+  padding-top: 0.2rem;
+  padding-left: 0.1rem;
+}
+#main .hotactive a {
+  display: block;
+}
+#main .hotactive a img {
+  width: 100%;
+}
+#main .longtravel {
+  width: 100vw;
+}
+#main .longtravel .traveltitle {
+  display: flex;
+}
+#main .longtravel .traveltitle a {
+  padding: 0.1rem 0;
+  width: 50%;
+  display: block;
+  text-align: center;
+  font-size: 0.18rem;
+  line-height: 0.18rem;
+}
+#main .longtravel .traveltitle a.active {
+  border-bottom: 0.02rem solid red;
+}
+#main .longtravel a img {
+  width: 100%;
+}
+#footer {
+  background-color: hotpink;
+  position: relative;
+  padding: 0.1rem;
+}
+#footer a {
+  margin-left: 0.05rem;
+}
+#footer .top {
+  right: 0px;
+  position: absolute;
+}
